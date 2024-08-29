@@ -22,16 +22,31 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-
     <style>
-        .v{border: 1px solid red}
+        .v{
+            border: 1px solid red;
+        }
     </style>
-
 
 </head>
 
-<body class="font-sans antialiased">
-    @yield('content')
+<body class="font-sans antialiased flex justify-center">
+
+    <section class="flex flex-col justify-center h-dvh">
+        <section class="h-16 w-full flex justify-center">
+            <x-application-logo></x-application-logo>
+        </section>
+        <div class="flex flex-col">
+            <h1 class="text-3xl text-center">@yield('error-name')</h1>
+            <p class="text-center mt-4 text-lg gap-x-4">
+                <a class="hover:underline hover:text-blue-500 hover:scale-[1.1]" href="{{ route('website.index') }}">Início</a>
+                /
+                <a class="hover:underline hover:text-blue-500 hover:scale-[1.1]" href="{{ route('profile.edit') }}">Perfil</a>
+            </p>
+        </div>
+    </section>
+
+
 </body>
 
 </html>

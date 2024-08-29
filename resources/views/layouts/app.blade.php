@@ -18,5 +18,9 @@
         <main>
             {{ $slot }}
         </main>
+
+        @isset($script)
+            {{ $script }}
+        @endisset
     </div>
 @endsection
